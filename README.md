@@ -122,3 +122,31 @@ Audio Feedback: pyttsx3
 ⚠️ Notes & Limitations
 Light Sensitivity: Haar Cascades and pixel-distance metrics depend on uniform lighting. Register faces in the environment where attendance will be taken.
 Security: Haar + KNN is designed for educational and demonstration purposes. It does not include 3D liveness detection (can be spoofed by a printed photograph).
+
+
+
+ Run via Terminal (PowerShell)
+
+Open PowerShell in face_attendance_v2:
+
+Step 1 — Register your face:
+
+powershell
+cd "c:\Users\ARPITHA\OneDrive\Desktop\face recognition\face_attendance_v2"
+.\venv\Scripts\python.exe add_faces.py --name "YourName"
+
+Look into the camera and slightly turn your head until all 100 samples are captured.
+
+Step 2 — Take attendance:
+
+powershell
+.\venv\Scripts\python.exe take_attendance.py
+Controls: Press o to mark attendance, a to toggle auto-mark, and q to quit.
+Records are saved to Attendance/.
+
+Step 3 — View the Dashboard:
+
+powershell
+.\venv\Scripts\streamlit.exe run app.py
+
+Opens the live attendance web dashboard in your browser (http://localhost:8501).
